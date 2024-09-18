@@ -1,8 +1,3 @@
-//==============================================================================================
-// Modified by [Your Name] <your.email@example.com>
-//
-// This software is distributed under the CC0 Public Domain Dedication.
-//==============================================================================================
 #include <cmath>
 #include "rtweekend.h"
 #include "camera.h"
