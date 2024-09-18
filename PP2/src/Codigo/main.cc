@@ -57,23 +57,7 @@ int main() {
     cam.lookfrom = point3(13,10,-10);//13 2 3
     cam.lookat   = point3(0,0,0);
 
-    // Animation parameters
-    int frames = 360; // Number of frames for the animation
-    double radius = 13.0; // Radius of the camera orbit
-
-    /*for (int frame = 0; frame < frames; ++frame) {
-        double time = frame * 2 * M_PI / frames; // Current time for animation
-
-        // Move the camera in a circular path
-        cam.lookfrom = point3(radius * cos(time), 2, radius * sin(time));
-        cam.lookat = point3(0, 0, 0);
-
-        // Create the world with the moving sphere
-        create_world(world, time);
-
-        // Render the current frame
-        cam.render(world); // Use the default render method without filename
-    }*/
+   
     create_world(world,300);//10
     cam.render(world);
     return 0;
