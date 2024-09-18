@@ -2,6 +2,7 @@
 
 
 PP2
+
 Inicialmente foi necessário baixar o Cmake e o MinGW para que fosse possível compilar o código e criar as imagens em C++.
 
 Após a produção do código foi usado o "cmake -B build" no terminal para que fossem criados todos os arquivos do build para a compilação do main. Em seguida, é feito o "cmake --build build --config Release" e por fim o "build\Release\Codigo > image.ppm", sendo esta última chamada a que cria a imagem de fato.
