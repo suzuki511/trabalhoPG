@@ -1,0 +1,10 @@
+^C:\USERS\DELL\DESKTOP\PP2\BUILD\CMAKEFILES\4F855EC7BC4C989CE502B725D0E1557F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\cmake-3.30.3-windows-x86_64\cmake-3.30.3-windows-x86_64\bin\cmake.exe" -SC:/Users/Dell/Desktop/PP2 -BC:/Users/Dell/Desktop/PP2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Dell/Desktop/PP2/build/Codigo.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

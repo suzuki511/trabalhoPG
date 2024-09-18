@@ -1,0 +1,3 @@
+C:/Users/Dell/Desktop/PP2/build/CMakeFiles/Codigo.dir
+C:/Users/Dell/Desktop/PP2/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Dell/Desktop/PP2/build/CMakeFiles/ZERO_CHECK.dir
