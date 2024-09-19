@@ -1,7 +1,5 @@
-# Documentação dos trabalhos
+# Documentação do trabalho - PP2
 
-
-PP2
 
   Inicialmente foi necessário baixar o Cmake e o MinGW para que fosse possível compilar o código e criar as imagens em C++.
 
@@ -29,5 +27,3 @@ PP2
 
   As imagens podem ser encontradas na pasta imagensPG.
 
-
-P2 - Trabalho Prova
