@@ -1,0 +1,68 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebGL Cubos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 aPosition;
+        attribute vec4 aColor;
+        attribute vec2 aTexCoord;
+
+        uniform mat4 uModelViewMatrix;
+        uniform vec3 uTheta;
+
+        varying vec4 vColor;
+        varying vec2 vTexCoord;
+
+        void main() {
+            mat4 rotationX = mat4(1.0, 0.0, 0.0, 0.0,
+                                   0.0, cos(uTheta.x), -sin(uTheta.x), 0.0,
+                                   0.0, sin(uTheta.x), cos(uTheta.x), 0.0,
+                                   0.0, 0.0, 0.0, 1.5);
+            mat4 rotationY = mat4(cos(uTheta.y), 0.0, sin(uTheta.y), 0.0,
+                                   0.0, 1.0, 0.0, 0.0,
+                                   -sin(uTheta.y), 0.0, cos(uTheta.y), 0.0,
+                                   0.0, 0.0, 0.0, 1.5);
+            mat4 rotationZ = mat4(cos(uTheta.z), -sin(uTheta.z), 0.0, 0.0,
+                                   sin(uTheta.z), cos(uTheta.z), 0.0, 0.0,
+                                   0.0, 0.0, 1.0, 0.0,
+                                   0.0, 0.0, 0.0, 1.5);
+
+            gl_Position = uModelViewMatrix * rotationZ * rotationY * rotationX * aPosition;
+            vColor = aColor;
+            vTexCoord = aTexCoord;
+        }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        varying vec4 vColor;
+        varying vec2 vTexCoord;
+
+        uniform sampler2D uTextureMap;
+
+        void main() {
+            gl_FragColor = texture2D(uTextureMap, vTexCoord) * vColor;
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 100px;
+            
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gl-canvas"width="1000px" height="500px"></canvas>
+
+    <script type="text/javascript" src="initShader.js"></script>    
+    <script type="text/javascript" src="move.js"></script>
+    <script type="text/javascript" src="texturecube.js"></script>
+</body>
+</html>
